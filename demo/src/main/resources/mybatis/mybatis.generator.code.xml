@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="generator">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/mytestdb"
+                        userId="root"
+                        password="root"/>
+        <javaModelGenerator targetPackage="com.dht.pojo"
+                            targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="mappers"
+                         targetProject="src/main/resources"/>
+        <javaClientGenerator targetPackage="com.dht.dao"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+        <!--<table tableName="category" domainObjectName="CateVO" mapperName="CateMapper">
+            <generatedKey column="cid" sqlStatement="MySql" identity="true"></generatedKey>
+        </table>
+        <table tableName="book" domainObjectName="BookVO" mapperName="BookMapper">
+            <generatedKey column="bid" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="bpublish" javaType="java.sql.Timestamp"></columnOverride>
+        </table>-->
+        <table tableName="tblrole" domainObjectName="RoleVO" mapperName="RoleMapper">
+            <generatedKey column="rid" sqlStatement="MySql" identity="true"></generatedKey>
+        </table>
+        <table tableName="tblpermission" domainObjectName="PermVO" mapperName="PermMapper">
+            <generatedKey column="pid" sqlStatement="MySql" identity="true"></generatedKey>
+        </table>
+        <table tableName="tbluser" domainObjectName="UserVO" mapperName="UserMapper">
+            <generatedKey column="uid" sqlStatement="MySql" identity="true"></generatedKey>
+            <columnOverride column="ulasttime" javaType="java.sql.Timestamp"></columnOverride>
+        </table>
+        <table tableName="tbluserrole" domainObjectName="UserRoleVO" mapperName="UserRoleMapper">
+            <generatedKey column="urid" sqlStatement="MySql" identity="true"></generatedKey>
+        </table>
+        <table tableName="tblrolepermission" domainObjectName="RolePermVO" mapperName="RolePermMapper">
+            <generatedKey column="rpid" sqlStatement="MySql" identity="true"></generatedKey>
+        </table>
+    </context>
+</generatorConfiguration>
